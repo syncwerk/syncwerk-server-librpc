@@ -1,0 +1,19 @@
+sudo: false
+language: python
+compiler:
+ - gcc
+ - clang
+addons:
+  apt:
+    packages:
+      - libjansson-dev
+before_install:
+ - git clean -x -f
+ - ./autogen.sh
+script:
+ - ./configure
+ - make -j4
+ - make check -j4
+ - python pyrpcsyncwerk/test_pyrpcsyncwerk.py
+notifications:
+    email: false

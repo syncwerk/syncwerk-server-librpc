@@ -1,0 +1,14 @@
+Source: syncwerk-server-librpc
+Section: libs
+Priority: optional
+Maintainer: ${MAINTAINER}
+Build-Depends: debhelper (>= 9)
+Standards-Version: ${DEBSTDVER}
+Homepage: https://www.syncwerk.com
+
+Package: syncwerk-server-librpc
+Architecture: any
+Depends: \${shlibs:Depends}, \${misc:Depends}
+Conflicts: syncwerk-client-librpc
+Description: Syncwerk RPC Library
+ Syncwerk RPC library for client and server implementations

@@ -1,0 +1,11 @@
+prefix=(DESTDIR)@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: librpcsyncwerk
+Description: Simple C rpc library
+Version: @VERSION@
+Libs: -L${libdir} -lrpcsyncwerk
+Cflags: -I${includedir} -I${includedir}/rpcsyncwerk
+Requires: gobject-2.0 gio-2.0 jansson

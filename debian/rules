@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --parallel
+
+override_dh_auto_configure:
+	./autogen.sh
+	# Remove Python components manually from build since --disable-compile-python and --enable-compile-python=no fail to work
+	sed -i s/pyrpcsyncwerk//g Makefile.am
+	dh_auto_configure -- --prefix=/usr --enable-server-pkg --disable-compile-demo
